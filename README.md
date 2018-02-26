@@ -7,13 +7,13 @@ $$
   关于这本书已经断断续续的看了好几遍了，使自己对jvm有了很深的理解，但是由于长时间的不用，对很多的功能点有所遗忘，特此写下这篇随手记，为以后的回忆与学习提供帮助，第一次写这种笔记，有种无从下手的感觉，后续持续改进中。。。
 ```
 
-![深入理解 Java 虚拟机](E:\git_repository\Understanding-of-JVM\picture\深入理解 Java 虚拟机.jpg)
+![深入理解 Java 虚拟机](https://github.com/tjy666/Understanding-of-JVM/tree/master/picture/深入理解 Java 虚拟机.jpg)
 
 ### 1、关于java内存区域与内存溢出异常
 
 ​       下图为java运行时jvm将它所管理的内存划分的各个不同的数据区域，这些区域都有各自不同的用途，接下来，我会将这些区域的用途进行详细的介绍。
 
-![java虚拟机运行时数据区](E:\git_repository\Understanding-of-JVM\picture\java虚拟机运行时数据区.jpg)
+![java虚拟机运行时数据区](https://github.com/tjy666/Understanding-of-JVM/tree/master/picture/java虚拟机运行时数据区.jpg)
 
 #### 1.1 程序计数器
 
