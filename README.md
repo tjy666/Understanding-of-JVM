@@ -1,14 +1,14 @@
 #  
 
-$$
-《深入理解 Java 虚拟机--JVM高级特性与最佳实践》
-$$
+--------
+                                   《深入理解 Java 虚拟机--JVM高级特性与最佳实践》
+--------
 
 > ```
->   关于这本书已经断断续续的看了好几遍了，使自己对jvm有了很深的理解，但是由于长时间的不用，对很多的功能点有所遗忘，特此写下这篇随手记，为以后的回忆与学习提供帮助，第一次写这种笔记，有种无从下手的感觉，后续持续改进中。。。
+   关于这本书已经断断续续的看了好几遍了，使自己对jvm有了很深的理解，但是由于长时间的不用，对很多的功能点有所遗忘，特此写下这篇随手记，为以后的回忆与学习提供帮助，第一次写这种笔记，有种无从下手的感觉，后续持续改进中。。。
 > ```
 
-![深入理解 Java 虚拟机](https://github.com/tjy666/Understanding-of-JVM/tree/master/picture/understandingofJVM.jpg)
+![深入理解 Java 虚拟机](picture/understandingofJVM.jpg)
 
 ### 1、关于java内存区域与内存溢出异常
 
@@ -50,13 +50,12 @@ $$
 
 ​     1）虚拟机在遇到new这个指令时，首先会去方法区中的常量池检查该对象的类是否已经被加载过了，未加载过，则先进行类的加载、解析和初始化，然后为这个对象在堆上分配内存，内存的大小固定（大小通过它的类得知）。
 
-​    2）内存分配完毕后，虚拟机将分配到的内存空间都初始化为零值（这就是为什么对象未初始化字段的话，基本类型为0，而引用类型为null）
-
-`package ObjectCreate;
+​    2）内存分配完毕后，虚拟机将分配到的内存空间都初始化为零值（这就是为什么对象未初始化字段的话，基本类型为0，而引用类型为null）
+```
+package ObjectCreate;
 
 public class DataInitTest {
 
-```
 public static void main(String[] args) {
 	Data data = new Data();
 	System.out.println(data.intA);
@@ -68,14 +67,13 @@ public static void main(String[] args) {
 	System.out.println(data.byteG);
 	System.out.println(data.data);
 }
-```
 
 }
 
 class Data{
-​	
+	
 
-```
+
 int intA;
 double doubleB;
 char charC;
@@ -84,13 +82,13 @@ boolean booleanE;
 long longF;
 byte byteG;
 Data data;
+
+
+}
 ```
-
-}`
-
 运行结果为：
 
-![对象初始化结果](E:\git_repository\Understanding-of-JVM\picture\对象初始化结果.jpg)
+![对象初始化结果](picture\对象初始化结果.jpg)
 
 ​     3）接下来，虚拟机要对对象头进行必要的设置，例如：这个对象时哪个类的实例，如何能找到类的元数据信息、对象的哈希码、对象的GC年龄等信息。
 
